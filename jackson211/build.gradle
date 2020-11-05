@@ -1,0 +1,32 @@
+plugins {
+    id 'java'
+    id 'org.jetbrains.kotlin.jvm'
+    id 'application'
+}
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+dependencies {
+    implementation(enforcedPlatform("com.fasterxml.jackson:jackson-bom:2.11.3"))
+    implementation("com.fasterxml.jackson.core:jackson-databind")
+    implementation('com.fasterxml.jackson.module:jackson-module-kotlin')
+
+    implementation(project(":common"))
+}
+
+sourceSets {
+    main { java { setSrcDirs(srcDirs + file("src/main/kotlin/")) } }
+    test {
+        java { setSrcDirs(srcDirs + file("src/test/kotlin/")) }
+
+        // ソースファイルの隣にテスト用のリソースを配置できるようにする
+        resources { setSrcDirs(srcDirs + file("src/test/kotlin/")) }
+    }
+}
+
+application {
+    mainClass = 'com.example.Jackson211Main'
+}

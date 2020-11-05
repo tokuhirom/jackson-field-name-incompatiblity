@@ -1,0 +1,29 @@
+plugins {
+    id 'java'
+    id 'org.jetbrains.kotlin.jvm'
+}
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+dependencies {
+    compileOnly 'org.projectlombok:lombok:1.18.16'
+    annotationProcessor 'org.projectlombok:lombok:1.18.16'
+
+    implementation(enforcedPlatform("com.fasterxml.jackson:jackson-bom:2.10.0"))
+    implementation("com.fasterxml.jackson.core:jackson-databind")
+    implementation('com.fasterxml.jackson.module:jackson-module-kotlin')
+    implementation("org.jetbrains.kotlin:kotlin-reflect:1.4.10")
+}
+
+sourceSets {
+    main { java { setSrcDirs(srcDirs + file("src/main/kotlin/")) } }
+    test {
+        java { setSrcDirs(srcDirs + file("src/test/kotlin/")) }
+
+        // ソースファイルの隣にテスト用のリソースを配置できるようにする
+        resources { setSrcDirs(srcDirs + file("src/test/kotlin/")) }
+    }
+}

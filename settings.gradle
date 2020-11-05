@@ -1,0 +1,5 @@
+rootProject.name = 'field-names3'
+
+include(":common")
+include(":jackson210")
+include(":jackson211")
