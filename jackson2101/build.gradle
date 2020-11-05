@@ -10,7 +10,7 @@ repositories {
 }
 
 dependencies {
-    implementation(enforcedPlatform("com.fasterxml.jackson:jackson-bom:2.11.3"))
+    implementation(enforcedPlatform("com.fasterxml.jackson:jackson-bom:2.10.1"))
     implementation("com.fasterxml.jackson.core:jackson-databind")
     implementation('com.fasterxml.jackson.module:jackson-module-kotlin')
 

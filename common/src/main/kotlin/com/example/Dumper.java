@@ -8,16 +8,16 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class Dumper {
-    public static void dumpAll(String fileName) throws Exception {
-        try(BufferedWriter writer = new BufferedWriter(new FileWriter(fileName))) {
-            dumpInfo(writer);
+    public static void dumpAll() throws Exception {
+        String version = com.fasterxml.jackson.databind.cfg.PackageVersion.VERSION.toString();
+        try(BufferedWriter writer = new BufferedWriter(new FileWriter("jackson-" + version + ".md"))) {
+            dumpInfo(writer, version);
             dumpObject(writer, new FooKt(true));
             writer.write("\n\n");
         }
     }
 
-    public static void dumpInfo(BufferedWriter writer) throws IOException {
-        String version = com.fasterxml.jackson.databind.cfg.PackageVersion.VERSION.toString();
+    public static void dumpInfo(BufferedWriter writer, String version) throws IOException {
         writer.write("### Jackson version: " + version + "\n\n");
     }
 
