@@ -1,11 +1,6 @@
-## Jackson version: 2.11.3
-### Java
+### Jackson version: 2.11.3
 
-{"usingBar":true}
-
-### Kotlin
-
-{"isUsingBar":true}
+	{"isUsingBar":true}
 
 
 
