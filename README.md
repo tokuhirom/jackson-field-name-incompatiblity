@@ -1,4 +1,4 @@
-# jackson-module-kotlin's incompatibility between 2.10.x to 2.11.x
+# jackson-module-kotlin's incompatibility between 2.10.0 to 2.10.1
 
 In Jackson 2.11.x+, there's jackson-module-kotlin's serialization result is incomptible.
 
@@ -16,7 +16,7 @@ Reproducing method:
 
 	{"usingBar":true}
 
-### Jackson version: 2.11.3
+### Jackson version: 2.10.1
 
 	{"isUsingBar":true}
 
