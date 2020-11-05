@@ -19,3 +19,7 @@ Reproducing method:
 ### Jackson version: 2.11.3
 
 	{"isUsingBar":true}
+
+## See also
+
+https://github.com/FasterXML/jackson-module-kotlin/issues/80
